@@ -8,6 +8,9 @@ default_allowed_licenses="$script_dir/allowed-licenses.txt"
 ALLOWED_LICENSES="${ALLOWED_LICENSES:-$(cat $default_allowed_licenses | tr '\n' ','| sed 's/,$//')}"
 echo "Allowed licenses: $ALLOWED_LICENSES"
 
+TARGET_DIR=${TARGET_DIR:-.}
+cd "$TARGET_DIR"
+
 ALL_OUTPUT_FILE="${ALL_OUTPUT_FILE:-licenses.csv}"
 DISALLOWED_OUTPUT_FILE="${DISALLOWED_OUTPUT_FILE:-disallowed-licenses.csv}"
 license-checker-rseidelsohn ${*:---summary --unknown --nopeer --csv} | tee "$ALL_OUTPUT_FILE"
