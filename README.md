@@ -12,5 +12,6 @@ See the `entrypoint.sh` for configurable environment variables, things which can
 * `ALL_OUTPUT_FILE` - where to put the CSV report of all discovered licenses. Defaults to `licenses.csv`. Consider making it a build artifact.
 * `DISALLOWED_OUTPUT_FILE` - where to put the CSV report of disallowed licenses. Defaults to `disallowed-licenses.csv`. Consider making it a build artifact.
 * `TARGET_DIR` - where you want the scan to run, instead of the root of the repo. Relative paths should work.
+* `EXCLUDE_PACKAGES` - semicolon separated list of npm packages to ignore scanning for licenses - use this if you have a package you know is OK, such as an internal dependency.
 
 The arguments to [`license-checker-rseidelsohn`](https://github.com/RSeidelsohn/license-checker-rseidelsohn) can be overriden by adding args to the action.
