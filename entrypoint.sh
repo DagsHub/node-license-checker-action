@@ -1,6 +1,5 @@
 #!/bin/bash
 set -e
-set -x
 
 script_dir="$(dirname "$0")"
 default_allowed_licenses="$script_dir/allowed-licenses.txt"
@@ -19,8 +18,10 @@ fi
 ALL_OUTPUT_FILE="${ALL_OUTPUT_FILE:-licenses.csv}"
 DISALLOWED_OUTPUT_FILE="${DISALLOWED_OUTPUT_FILE:-disallowed-licenses.csv}"
 
+set -x
 license-checker-rseidelsohn ${*:---summary --unknown --nopeer --csv "${EXCLUDE_PACKAGES[@]}" } | tee "$ALL_OUTPUT_FILE"
 license-checker-rseidelsohn ${*:---summary --unknown --nopeer --csv --excludeLicenses "$ALLOWED_LICENSES" "${EXCLUDE_PACKAGES[@]}" } > "$DISALLOWED_OUTPUT_FILE"
+set +x
 
 line_count=$(wc -l < "$DISALLOWED_OUTPUT_FILE")
 if [ "$line_count" -gt 1 ]; then
