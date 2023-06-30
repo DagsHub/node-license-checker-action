@@ -1,5 +1,5 @@
 # TODO: Node alpine
-FROM node:lts-alpine3.18
+FROM node:20.3-slim
 
 RUN npm install -g license-checker-rseidelsohn
 
