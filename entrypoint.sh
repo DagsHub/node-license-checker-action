@@ -11,6 +11,10 @@ echo "Allowed licenses: $ALLOWED_LICENSES"
 TARGET_DIR=${TARGET_DIR:-.}
 cd "$TARGET_DIR"
 
+if [ "${DO_NPM_INSTALL:-true}" = "true" ]; then
+    eval "${NPM_INSTALL_CMD:-npm ci --ignore-scripts}"
+fi
+
 if [ -n "$EXCLUDE_PACKAGES" ]; then
     EXCLUDE_PACKAGES=("--excludePackages" "$EXCLUDE_PACKAGES")
 fi
