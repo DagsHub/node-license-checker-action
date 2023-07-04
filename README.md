@@ -13,5 +13,6 @@ See the `entrypoint.sh` for configurable environment variables, things which can
 * `EXCLUDE_PACKAGES` - semicolon separated list of npm packages to ignore scanning for licenses - use this if you have a package you know is OK, such as an internal dependency.
 * `DO_NPM_INSTALL` - whether to automatically download node_modules to TARGET_DIR. Default: true
 * `NPM_INSTALL_CMD` - command used to download node_modules. Default: `npm ci --ignore-scripts`. Sometimes, you might change it to `yarn install` or `npm install --ignore-scripts`
+* `DO_NPM_LS` - whether to run `npm ls --all` to print a dependency tree before running the license checks.
 
 The arguments to [`license-checker-rseidelsohn`](https://github.com/RSeidelsohn/license-checker-rseidelsohn) can be overriden by adding args to the action.
