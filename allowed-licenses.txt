@@ -7,7 +7,6 @@ BSD-3-Clause
 CC-BY-3.0
 CC-BY-4.0
 CC0-1.0
-EUPL-1.1
 ISC
 MIT
 MIT*
@@ -18,3 +17,4 @@ Python-2.0
 Unlicense
 WTFPL
 Zlib
+BlueOak-1.0.0
