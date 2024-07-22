@@ -18,3 +18,4 @@ Unlicense
 WTFPL
 Zlib
 BlueOak-1.0.0
+Artistic-2.0
